@@ -101,7 +101,7 @@ object CalculateTotalService {
   def printAmount(amount : BigDecimal) : String =
     if (
       (amount.compare(BigDecimal.valueOf(0))!=0) && //for 0, it should return "£0.00"
-        (amount.abs.compare(1)<0) //for -0.99 to 0.99 it should return XXp
+      (amount.abs.compare(1)<0) //for -0.99 to 0.99 it should return XXp
     ) s"${(amount*100).setScale(0)}p"
     else currencyFormatter.format(amount)
 
