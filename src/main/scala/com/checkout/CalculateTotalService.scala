@@ -40,11 +40,10 @@ object CalculateTotalService {
     * @return
     */
   def toItems(args : Seq[String]) : Either[ErrorType, Seq[Item]] =
-    args.map { arg => arg match {
+    args.map {
       case Item(item) => item //unapply from Item is used to match
       case arg@_ if arg=="" => s"(empty) is undefined": ErrorType
       case arg@_ => s"${arg} is undefined": ErrorType
-    }
     }.foldLeft(Seq.empty[Item].asRight[ErrorType]) {
       case (Right(items), item: Item) => Right(items :+ item)
       case (_, exception: ErrorType) => exception.asLeft
