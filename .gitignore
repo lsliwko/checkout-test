@@ -1,32 +1,11 @@
-# use glob syntax.
-syntax: glob
-*.ser
-*.class
-*~
-*.bak
-*.off
-*.old
+/bin/*
+/target/*
+/project/*
+/logs/*
+/usage/*
+/.idea/*
+.tmpBin
+.metadata
 .DS_Store
-
-# building
-lib_managed
-project/boot
-project/target
-target
-logs
-
-# IDEA
-*.iml
-*.ipr
-*.iws
-/.idea/
-/.idea_modules/
-
-# ECLIPSE
-.classpath
-.project
-.settings
-
-# SBT
-/.history
-publish.sbt
+.cache
+*snapshot.dat
